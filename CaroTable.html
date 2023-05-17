@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<p>Caro Simple Game</p>
+<p id="carogame"></p>
+</body>
+</html>
+<script>
+    let chess = [];
+    let data = "";
+    for (let i=0;i<5;i++){
+        chess [i]=[0,0,0,0,0];
+    }
+    for (let i=0;i<5;i++){
+        data += "<br>";
+        for (let j=0;j<5;j++){
+            data += chess[i][j] + "&nbsp;&nbsp;";
+        }
+    }
+    data += "<br><br> <button type='button' onclick='changeValue()'>Change Value</button>";
+    document.getElementById("carogame").innerHTML=data;
+
+    function changeValue(){
+        data="";
+        let x = prompt("Nhập vị trí thay đổi theo dọc");
+        let y = prompt("Nhập vị trí thay đổi theo ngang");
+        chess[x][y]="x";
+        for (let i=0;i<5;i++){
+            data += "<br>";
+            for (let j=0;j<5;j++){
+                data += chess[i][j] + "&nbsp;&nbsp;";
+            }
+        }
+        data += "<br><br> <button type='button' onclick='changeValue()'>Change Value</button>";
+        document.getElementById("carogame").innerHTML=data;
+    }
+</script>
